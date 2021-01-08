@@ -1,0 +1,3 @@
+include ':protlinecircleview'
+include ':app'
+rootProject.name = "LinkedProtLineCircleView"
