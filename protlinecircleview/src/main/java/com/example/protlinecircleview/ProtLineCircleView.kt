@@ -21,7 +21,7 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 4
 val scGap : Float = 0.02f / parts
 val strokeFactor : Float = 90f
-val cFactor : Float = 5.9f
+val cFactor : Float = 9.8f
 val l1Factor : Float = 13.2f
 val l2Factor : Float = 2.9f
 val delay : Long = 20
@@ -47,10 +47,12 @@ fun Canvas.drawProtLineCircle(scale : Float, w : Float, h : Float, paint : Paint
     drawArc(RectF(-c, -c, c, c), -90f, 360f * sf1, false, paint)
     for (j in 0..1) {
         save()
+        translate(0f, -c)
         rotate(45f * (1f - 2 * j) * sf4)
         drawLine(0f, 0f, 0f, -l1 * sf2, paint)
         restore()
         save()
+        translate(0f, c)
         rotate(45f * (1f - 2 * j) * sf3)
         drawLine(0f, 0f, 0f, l2 * sf2, paint)
         restore()
